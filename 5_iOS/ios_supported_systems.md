@@ -1,4 +1,4 @@
-#iOS Device & OS Version Support
+# iOS Device & OS Version Support
 
 - iOS version 5.1.1 and later are supported by ARToolKit.
 - Movie file reading available on iOS v4.1 and later, i.e. VEObjectMovie and MovieVideo classes should not be used on iOS v4.0.x

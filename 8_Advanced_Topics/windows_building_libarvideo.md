@@ -3,21 +3,21 @@
 ## What is the relationship between libARvideo and a Video Library?
 ARToolKit uses video libraries as a standardized way of accessing video capture hardware (like webcams) on your computer. On Windows, you have the option of using QuickTime or DirectShow. On OS X, we use QuickTime.
 
-###What is DirectShow
+### What is DirectShow
 DirectShow is Microsoft's media-handling library on the Windows Platform. While the DirectShow libraries are in every release of Windows, and can be used right away, compiling applications that use the DirectShow [SDK][1a] is difficult. This is mostly due to Microsoft's determination to force all users of video into using its [digital rights management][2a] model (as found in Windows Vista's Media Foundation library) and the consequent withdrawal of the DirectShow SDK from the larger DirectX SDK and Visual Studio SDKs.
 
 Because the process of installing the DirectShow SDK is tiresome, we supply compiled binaries of ARToolKit to customers - unless customers want to recompile libARvideo on Windows, installing the DirectShow SDK is unnecessary. For customers who do wish to recompile libARvideo for their own purposes, the following guide should be of help.
 
-###What is QuickTime?
+### What is QuickTime?
 QuickTime is Apple's media-handling library, available on both Mac OS X and the Windows platforms. One benefit QuickTime has over DirectShow is the ability to read pre-recorded video from files on disk or via network streaming (for uses such as calibrating a camera on a device which the tools do not run).
 
 While the QuickTime libraries and SDK are in every release of Mac OS X, and can be used right away; they are not installed by default on Windows. Every user who wants to run an ARToolKit application that uses QuickTime for video capture on Windows will need to install QuickTime. This is not onerous - any user who already has iTunes for Windows installed will have QuickTime installed already. Other users should visit the [QuickTime for Windows download page][1].
 
 Additionally, for customers using Windows who do wish to recompile libARvideo for their own purposes, the QuickTime SDK must be downloaded and installed.
 
-##Installing the DirectShow SDK
+## Installing the DirectShow SDK
 
-###Visual Studio 2013
+### Visual Studio 2013
 Visual Studio 2013 is supplied with Windows SDK 8.1, which includes the required DirectShow link libraries, and some of the required headers. Interestingly, it also includes strmbase.lib, the library implementing the DirectShow base classes, but unfortunately does not include either the Debug version of this library (strmbasd.lib) or the header files. These would normally be required to be manually installed from the Windows SDK 7.1 samples package. However, we have made a package which includes the DirectShow base classes source and compiled libraries for 32-bit and 64-bit architectures.
 
 [Download the DirectShow base classes package][3a].
@@ -31,7 +31,7 @@ Depending on which version of the Microsoft developer tools and/or SDK version y
 -   Download the latest DirectX SDK. At the time of writing, this is the August 2007 release. [DirectX SDK download page][4a]. Install the DirectX SDK.
 -   **If you are using Microsoft Visual Studio 2005** or later, download the Microsoft Platform SDK. *N.B.: In June 2006, the Platform SDK was renamed "Windows SDK".* A version of the Platform SDK is included in Microsoft's Visual Studio 2005, but without the DirectShow SDK included. So all we need from the platform SDK is the DirectShow SDK, and this can be most easily obtained by using the "Microsoft ® Windows Server® 2003 R2 Platform SDK Web Install". Don't be put off by the name, this is the valid SDK for targeting Windows XP SP2. [Platform SDK download page][5a]. Install the Platform SDK, but do a custom install and deactivate everything except the DirectShow SDK.
 
-###Setting up Microsoft Visual Studio 2010 SP1 and earlier to use the DirectShow SDK
+### Setting up Microsoft Visual Studio 2010 SP1 and earlier to use the DirectShow SDK
 
 You can only use the "Standard" or above version of Microsoft Visual Studio to compile libARvideo's DirectShow modules. Visual Studio "Express Edition" will not work, since the Express Edition does not support ATL (which is used by the DirectShow code) [1][6a]
 
@@ -68,6 +68,6 @@ If you are having difficulty with these instructions, please post a message on t
 [4a]: http://msdn.microsoft.com/en-us/xna/aa937788.aspx
 [5a]: http://www.microsoft.com/downloads/details.aspx?FamilyID=0baf2b35-c656-4969-ace8-e4c0c0716adb&DisplayLang=en
 [6a]: http://www.microsoft.com/express/support/support-faq.aspx
-[Adding_DirectShow_SDK_to_Visual_Studio_path_1]: :adding_directshow_sdk_to_visual_studio_path_1.png
-[Adding_DirectShow_SDK_to_Visual_Studio_path_2]: :adding_directshow_sdk_to_visual_studio_path_2.png
-[Adding_DirectShow_SDK_to_Visual_Studio_path_3]: :adding_directshow_sdk_to_visual_studio_path_3.png
+[Adding_DirectShow_SDK_to_Visual_Studio_path_1]: ../_media/adding_directshow_sdk_to_visual_studio_path_1.png
+[Adding_DirectShow_SDK_to_Visual_Studio_path_2]: ../_media/adding_directshow_sdk_to_visual_studio_path_2.png
+[Adding_DirectShow_SDK_to_Visual_Studio_path_3]: ../_media/adding_directshow_sdk_to_visual_studio_path_3.png

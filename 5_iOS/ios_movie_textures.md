@@ -1,4 +1,4 @@
-#Movie Textures on iOS
+# Movie Textures on iOS
 ARToolKit natively supports real-time playback of movie files (including audio) in the augmented environment on iOS. Video can be manipulated in the scene, including being attached to a marker.
 
 A fully functional example named "ARAppMovie" is provided with ARToolKit for iOS.
@@ -11,7 +11,7 @@ Movie support is provided via at 3 different levels of abstraction.
 
 As MovieVideo is linked to by libARvideo on iOS, all applications must link against `AVFoundation.framework` and `AudioToolbox.framework`.
 
-##Format Support
+## Format Support
 Any video file playable on that iOS device can be handled by the MovieVideo class, provided the movie media is on the local filesystem. I.e. streaming media cannot be handled. If you wish to play media over the network, you will need to use another means to fetch the media completely in advance, cache it on the local filesystem, and then pass the path to the media to ARToolKit.
 
 Media decoding is resource intensive. It is highly recommended that you test the media on your preferred range of target devices. Additionally, performance benefits will be realised if the media fits inside power-of-two sized textures, e.g. width and height of 512 pixels or fewer.
@@ -33,4 +33,4 @@ Users of the MovieVideo class can listen for the NSNotification `MovieVideoPlayB
 ## Movies in libARvideo
 Video input via [libARvideo][config_video_capture] requires frames to be fetched via polling. A new parameter `AR_VIDEO_PARAM_IOS_ASYNC` can be queried to find out if frames are delivered asynchronously (CameraVideo) or must be fetched by polling (MovieVideo).
 
-[config_video_capture]: 2_Configuration:config_video_capture
+[config_video_capture]: ../2_Configuration/config_video_capture.md

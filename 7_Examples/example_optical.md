@@ -11,7 +11,7 @@ When the Hiro marker is held in the field of view of the camera and display, you
 
 Below is the listing for "optical":
 
-<pre>
+```
 Usage: ./optical [options]
 Options:
   --vconf <video parameter for the camera>
@@ -23,10 +23,10 @@ Options:
   --windowed    Display in window, rather than fullscreen.
   --fullscreen  Display fullscreen, rather than in window.
   -h -help --help: show this message
-</pre>
+```
 
 Below is the listing for "opticalStereo":
-<pre>
+```
 Usage: ./opticalStereo [options]
 Options:
   --vconf <video parameter for the camera>
@@ -43,9 +43,9 @@ Options:
             ROW_INTERLACED|COLUMN_INTERLACED|CHECKERBOARD].
             Select mono or stereo mode. (Not all modes supported).
   -h -help --help: show this message
-</pre>
+```
 
 If you want to change the markers, you can edit the file Data/markers.dat. If you want to change the content, edit the file Data/objects.dat.
 
-[config_camera_calibration]: 2_Configuration:config_camera_calibration
-[config_optical_see-through]: 8_Advanced_Topics:config_optical_see-through
+[config_camera_calibration]: ../2_Configuration/config_camera_calibration.md
+[config_optical_see-through]: ../8_Advanced_Topics/config_optical_see-through.md

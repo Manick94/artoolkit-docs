@@ -1,11 +1,11 @@
-#ARToolKit for Unity on OS X
+# ARToolKit for Unity on OS X
 To get started with using ARToolKit for Unity on OS X, first visit our [Getting Started][unity_getting_started] guide.
 
-##Requirements
+## Requirements
 
 -   You must have a Unity Pro license to be able to export projects from Unity that use the ARToolKit for Unity plugins.
 
-##Troubleshooting
+## Troubleshooting
 Many common issues can be diagnosed by looking at Unity's Editor.log or Player.log. On OS X, these are located in the folder `\~/Library/Logs/Unity/`. The OS X console viewer (`/Applications/Utilities/Console.app1) is a good means of easily viewing these logs.
 
 ### NFT Tracking Works in Editor, not in Player
@@ -18,7 +18,7 @@ A workaround is to manually copy the StreamingAssets folder into the bundle. To 
 3.  Drag that folder into the "Contents" folder of the built application package. ![Dragging contents into StreamingAssets folder.][dragging_streamingassets_folder]
 
 
-[unity_getting_started]: 6_Unity:unity_getting_started
-[show_pacakge_contents]: :unity_player_os_x_show_pacakge_contents.png
-[streamingassets_folder]: :unity_os_x_streamingassets_folder.png
-[dragging_streamingassets_folder]: :unity_os_x_dragging_streamingassets_folder.png
+[unity_getting_started]: ../6_Unity/unity_getting_started.md
+[show_pacakge_contents]: ../_media/unity_player_os_x_show_pacakge_contents.png
+[streamingassets_folder]: ../_media/unity_os_x_streamingassets_folder.png
+[dragging_streamingassets_folder]: ../_media/unity_os_x_dragging_streamingassets_folder.png
