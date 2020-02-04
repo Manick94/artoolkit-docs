@@ -1,11 +1,11 @@
-#Calibrating Your Camera
+# Calibrating Your Camera
 In the ARToolKit software, default camera properties are contained in the camera parameter file camera_para.dat, that is read in each time an application is started. These parameters are sufficient for basic tracking for a wide range of different cameras. However, to get best tracking accuracy, particularly when looking directly onto a flat marker, it is important to calibrate your camera. Using a calibrated camera improves tracking accuracy and reduces jitter. In the case of video see-through AR devices (goggles that are not optically see through that usually utilize stereo cameras), having calibrated cameras can help remove lens distortion in the displayed video image.
 
 ![Beginning calibration with the chessboard][Beginning_calibration_with_the_chessboard]
 
 Using a very simple camera calibration technique it is possible to generate a separate parameter file for the specific camera(s) that are being used. This page presents how to use the utility programs included with ARToolKit to calibrate your video camera.
 
-###Set-Up
+### Set-Up
 Calibration works by capturing images of the pre-prepared calibration pattern with the camera. Two calibration pattern image files are provided by the  ARToolKit SDK (path: [downloaded ARToolKit SDK root directory]/doc/patterns):
 
     "Calibration chessboard (US Letter).pdf"
@@ -19,10 +19,10 @@ Once printed, the pattern must be affixed to a flat surface. The easiest means o
 
 Finally, set up your camera. A calibration file is only valid for one focus setting of the camera (although it will still work at other focal lengths), so choose in advance the focus setting for the camera which will be used most often. *This is especially important when your camera supports multiple aspect ratios. While the resolution need not be 1:1 with your camera calibration, the aspect ratio is extremely important.*
 
-###How it Works
+### How it Works
 The ["Calibration pattern.pdf"][2] image consists of a grid of black and white squares surrounded by a white border. When viewed through the camera lens, lens distortion causes the straight lines at the edges of the squares to appear curved. The calib_camera program uses the OpenCV library to locate the corners of the squares and then measures the spacing between the corners and uses this information to calculate the lens distortion. The more images captured, and the more angles they are captured from, the lower the error in the distortion measurement.
 
-####Executing the calib_camera Application
+#### Executing the calib_camera Application
 Open a command prompt:
 
      Mac OS X or Linux: open a Terminal window  
@@ -61,7 +61,7 @@ You will see output similar to this in your terminal:
 
 At this point, you should see the image from the camera appear.
 
-#####Optional - Changing the Default Calibration Pattern Settings
+##### Optional - Changing the Default Calibration Pattern Settings
 If you need to, the size of the calibration squares, the number of intermediate corners in horizontal and vertical directions (i.e. the number of rows minus 1 and the number of columns minus 1), and the number of calibration images captured can all be adjusted from the command line. Running the utility with the `--help` option will show the various command-line options for adjusting the default calibration settings.
 
 OS X or Linux command-line, type:
@@ -85,7 +85,7 @@ The help text is reproduced here:
       -pattwidth=n: specify the square width in the chessbaord.  
       -h or -help or --help: show this message
 
-#####Optional - Specifying Options for Video Configuration
+##### Optional - Specifying Options for Video Configuration
 In addition to command-line options for controlling the calibration pattern settings, a video configuration can also be specified on the command line using the `--vconf` parameter (followed by the actual video config, in quotes if it includes spaces), allowing you to choose a video format and/or image size, if your camera supports those options.
 
 For example, this invocation on Mac OS X requests the image from the camera be scaled to 640x480:
@@ -94,7 +94,7 @@ For example, this invocation on Mac OS X requests the image from the camera be s
 
 If you use the video configuration to select a video size different from that which will be used later, be sure to maintain the same proportions between the width and the height. For example, a 4:3 image of 1600x1200 pixels can be scaled to 800x600 or 640x480, whereas a 16:9 image of 1920x1080 image can be scaled to 860x540. *A camera calibration is only valid per aspect ratio.*
 
-####Capturing Calibration Images
+#### Capturing Calibration Images
 Calibration requires the capturing of a series of images. In the top-left corner of the capture window is displayed the number of images captured so far. Point the camera at the chessboard grid, and the inner corners of the squares will be highlighted with 'X' marks and numbered.
 
 When the camera can clearly see all the intermediate corners, the 'X' marks turn RED, and a calibration image can be captured:
@@ -144,10 +144,10 @@ At this point, you can press return or enter on the keyboard to save the data in
 
 That's all there is to it. This new calibration procedure takes only a minute, and should be fast enough that you can recalibrate your camera any time you change its focus or zoom. With good calibration, you'll see much improved tracking in ARToolKit.
 
-###Using the Calibration Data
+### Using the Calibration Data
 To use your new calibration file, just replace the default camera_para.dat file in ARToolKit's `bin/Data` directory with your newly saved data. It can be helpful to keep a collection of camera_para.dat files for cameras you commonly use.
 
-###Further Reading - Stereo Camera Calibration
+### Further Reading - Stereo Camera Calibration
 If calibrating a stereo camera, calibrate each eye separately first, saving the parameters, then run the program calib_stereo to perform the final step of [inter-ocular calibration][3].
 
 [2]: http://artoolkit.org/docs/Calibration_chessboard.pdf

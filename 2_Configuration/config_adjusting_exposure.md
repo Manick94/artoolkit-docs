@@ -1,4 +1,4 @@
-#Adjusting for Over-/Under-Exposed Video Sources
+# Adjusting for Over-/Under-Exposed Video Sources
 Part of ARToolKit's tracking operates on a binarized image, that is, an image that has been converted into black and white pixels only. All pixels above a certain level of brightness, referred to as the "binarization threshold", or just "threshold" are converted to white, and all pixels below this threshold are converted to black.
 
 The binarization threshold is an 8-bit number that is in the range `[0, 255]`, inclusive. The default value is usually set in the middle of this range, allowing ARToolKit to easily find markers in images that have good contrast. The default value is defined by the symbol `AR_DEFAULT_LABELING_THRESH` in arConfig.h.
