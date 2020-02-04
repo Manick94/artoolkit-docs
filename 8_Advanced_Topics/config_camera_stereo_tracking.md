@@ -7,7 +7,7 @@ Throughout this document, we will be referring to "left" and "right" cameras. We
 
 The following sections will help advise on the best stereo system setup.
 
-##General Rules on Stereo Tracking
+## General Rules on Stereo Tracking
 In order to get improved tracking data from stereo camera input, [each camera must be accurately calibrated][config_camera_calibration] (the lens calibrations) and the relationship between the two cameras (the *stereo calibration*) must be precisely known. Fortunately, ARToolKit provides easy-to-use utilities to help with these tasks; `calib_camera` and `calib_stereo`, respectively. However, it is generally not possible to use stereo tracking in situations where the cameras can move relative to each other during use. The expected scenario is a camera rig where the cameras are permanently mounted relative to each other, or are combined into a single physical housing.
 
 Stereo tracking will likely at least double the data being processed by ARToolKit, at all stages of the tracking pipeline. This requires careful consideration of the system used for the tracking. Here are some questions to consider:
@@ -54,7 +54,7 @@ Similar options apply to calib\_stereo, except the parameters are named with L a
 
 See [Configuring video capture][config_video_capture] for complete lists of video configuration options for each platform and video input module.
 
-###Using calib_stereo
+### Using calib_stereo
 calib\_stereo looks for the calibration information for each lens in the files Data/cparaL.dat and Data/cparaR.dat, for left and right cameras respectively. However, you can name these files as you wish, and just supply the pathnames to each using calib\_stereo's command-line parameters:
 ```
     ./calib_stereo -cparaL=left calibration file -cparaR=right calibration file
@@ -122,7 +122,7 @@ In order to obtain a good calibration for the cameras, it is important to obtain
 
 Once all the calibration images have been captured (10 by default), the stereo calibration data will be calculated and output to the terminal window, and you will be prompted for a file name for the calibration data.
 
-###Optional - Changing the Default Calibration Pattern Settings
+### Optional - Changing the Default Calibration Pattern Settings
 If you need to, the size of the calibration squares, the number of intermediate corners in horizontal and vertical directions (i.e. the number of rows minus 1 and the number of columns minus 1), and the number of calibration images captured can all be adjusted from the command line. Running the utility with the `--help` option will show the various command-line options for adjusting the default calibration settings.
 
 On Linux / OS X, type:

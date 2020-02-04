@@ -1,6 +1,6 @@
-#Advanced FAQs
+# Advanced FAQs
 
-##What is the difference between arGetTransMatSquare, arGetTransMatSquareCont, and arGetTransMat?
+## What is the difference between arGetTransMatSquare, arGetTransMatSquareCont, and arGetTransMat?
 These are variants on the same algorithm:
 
 - arGetTransMat is the most generic, and gets a pose estimate based on a set of 2D feature points.
@@ -26,7 +26,7 @@ The sample tracking algorithm supplied with the ARToolKit examples displays a go
     }
 ```
 
-##Why isn’t my performance as good as your demos?
+## Why isn’t my performance as good as your demos?
 ARToolKit works best with a controlled optical environment, in which the image acquired by the camera has a high signal-to-noise ratio, and when the properties of the optical environment are well known; when the lighting is bright (so the camera gain is low, and depth of field is good), when the camera is a good quality camera (with a CMOS sensor, with a large sensor surface, and with good lenses with good light-gathering properties), and when the camera has been accurately calibrated. If any of these requirements can't be met, performance will be less than the ideal case, but in most cases still usable. See [about hardware selection here][about_hardware_selection]
 
 [about_hardware_selection]: ./about_hardware_selection.md

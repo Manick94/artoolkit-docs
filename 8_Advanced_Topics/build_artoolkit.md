@@ -1,10 +1,10 @@
-#Building ARToolKit from Source
+# Building ARToolKit from Source
 _If you have been supplied with pre-built ARToolKit binaries, you will not need to build ARToolKit from source. The instructions below apply only to users who wish to modify the internals of ARToolKit._ Source code and project files are supplied for all of ARToolKit. This allows you to not only see how the toolkit works, but also to modify its operation should you so wish.
 
-##Required Software / Source Packages
+## Required Software / Source Packages
 External dependencies for building ARToolKit from source include all the dependencies for building your own ARToolKit-based applications (as listed on page [Installing ARToolKit][about_installing]) but also additional dependencies required to build the utilities and libraries. Where ARToolKit libraries require external DLLs, these are generally supplied with ARToolKit. Exceptions are listed below.
 
-###A supported compiler/IDE
+### A supported compiler/IDE
 
 * Windows:
 * Microsoft Visual Studio 2013 and Microsoft Visual Studio 2010 SP1 are supported.
@@ -18,7 +18,7 @@ External dependencies for building ARToolKit from source include all the depende
 *   GCC 4.4 is required. GCC 4.8 or later is recommended.
 
 
-###OpenGL
+### OpenGL
 
 - Windows: OpenGL is provided as part of your graphic card diver.
 
@@ -26,13 +26,13 @@ External dependencies for building ARToolKit from source include all the depende
 
 - Linux: Install `libgl1-mesa-dev` in order to be able to build ARToolKit.
 
-###libjpeg
+### libjpeg
 
 -   Windows/Mac OS X: libjpeg headers and libraries are supplied with ARToolKit.
 
 -   Linux: install package `libjpeg-dev`.
 
-###GLUT
+### GLUT
 
 Required to build libARgsub and the utilities and examples. Note: libARgsub\_lite provides equivalent functionality to libARgsub without requiring GLUT.
 
@@ -44,7 +44,7 @@ Required to build libARgsub and the utilities and examples. Note: libARgsub\_lit
 * Linux: GLUT should be available in your distribution (e.g. packages freeglut3-dev and xorg-dev). Otherwise, GLUT is included in the [MESA 3D libraries][3] (e.g. libgl1-mesa-dev)  
 
 
-###OpenCV - Required to build calib_camera
+### OpenCV - Required to build calib_camera
 
 Generally OpenCV headers and libraries are provided with ARToolKit.
 
@@ -54,7 +54,7 @@ Generally OpenCV headers and libraries are provided with ARToolKit.
 * Clang: If you prefer building with Clang, then the OpenCV headers and libraries are provided with ARToolKit and you need to install `libc++-dev`. Be aware that libARosg and some examples are excluded from this build because per default OpenSceneGraph comes compiled with GNU. If you would like to use them you need to compile OpenSceneGraph with Clang and then build libARosg and the examples manually.
 
 
-###Video capture libraries
+### Video capture libraries
 
 *  Windows: By default, on Windows ARToolKit's video library (libARvideo) uses Microsoft's DirectShow libraries. Unfortunately, this requires installation of the DirectX SDK and either the Windows SDK or the DirectShow package from the Microsoft Platform SDK to compile libARvideo. Please see the separate page [Building libARvideo][4]. Alternative video sources on Windows include:
 * QuickTime, either using the VideoDigitizer or movie files or streams. Please see the separate page [Building libARvideo][4].
@@ -69,14 +69,14 @@ Generally OpenCV headers and libraries are provided with ARToolKit.
 * libdc1394-22-dev (for lib1394 version 2.x) or libdc1394-13-dev (for lib1394 version 1.x)
 * libgstreamer0.10-dev
 
-###OpenVRML (optional)
+### OpenVRML (optional)
 If you would like to work with 3D models which are represented in a Virtual Reality Modeling Language (VRML) file then you need to install the OpenVRML SDK in order for ARToolKit to be able to render them. All the source code related to VRML is located in the ARvrml.lib.
 
 -   Windows: OpenVRML-0.16.6 or later (for Visual Studio 2005) must be on the include and library path to rebuild ARvrml.lib. Suitable binaries of OpenVRML for Windows can be downloaded [here][7].
 -   Mac OS X: OpenVRML should be installed using the [Fink][8] packagemanager. Once fink is installed, the required command to install OpenVRML is `fink -b install openvrml6-dev openvrml-gl6-dev`. Alternately, a Universal binary build of OpenVRML-0.16.6 suitable for inclusion in application bundles can be downloaded from [here][9].
 -   Linux: Binary deb packages are available from [here][10].
 
-###OpenSceneGraph (OSG)
+### OpenSceneGraph (OSG)
 In general you can find information about OpenSceneGraph (OSG) and what it does on their [website][13]. ARToolKit uses some of the features provided by [OSG][14]. All these features are available using the ARosg.lib.
 In general you need to install OSG on Mac and Windows when you like to build the complete ARToolKit project. On Linux you can choose in the `./Configure` step if you would like to use OSG. ARToolKit requires version 2.6 or later, version 2.8.2 is recommended.
 
@@ -89,27 +89,27 @@ In general you need to install OSG on Mac and Windows when you like to build the
 * Linux: OpenSceneGraph is available as a package for most Linux distributions (e.g. package libopenscenegraph-dev).  
 
 
-##Compiling ARToolKit
+## Compiling ARToolKit
 
-###Windows
+### Windows
 
 -   After unpacking ARToolKit, run the configure-win32 script. This generates AR/config.h for Windows builds. If you wish to change the default video library, or enable extra video libraries such as QuickTime, see [building libARvideo][4].
 -   Open the ARToolKit5.sln file inside the appropriate directory inside of the "VisualStudio" directory.
 -   Build the ToolKit and the sample applications. The VRML and OSG renderers are not built by default, but can be manually selected and built.
 
-###Mac OS X
+### Mac OS X
 
 -   Open the ARToolKit5.xcodeproj, found inside the Xcode folder.
 -   The configure step (which creates AR/config.h) will be run automatically during the build process. If you wish to override the defaults, you may manually edit AR/config.h after this.
 -   Select a target to build. The default target builds the complete toolkit with the exception of the OpenVRML and OSG-dependent projects, which can be manually selected and built.
 
-###Linux
+### Linux
 
 -   Building proceeds with the usual steps `./Configure; make` During the configure process, you will be asked to select video libraries to build against.
 
-##Post-Compilation Steps
+## Post-Compilation Steps
 
-###Verifying the Compilation
+### Verifying the Compilation
 ARToolKit includes a variety of examples demonstrating ARToolKit programming techniques. After compiling, the executables for these applications can be found in the `bin` directory inside your ARToolKit directory. Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. An explanation of simpleLight, including how to run it, and its source code can be found on the page [ARToolKit Tutorial 1: First Simple ARToolKit Scene][tutorial_1_first_scene]. More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Examples][examples].
 
 #### Windows:

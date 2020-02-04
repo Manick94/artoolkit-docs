@@ -7,13 +7,13 @@ Be aware, however, that benefit can also cause issues - There will always be som
 
 For a full discussion of the advantages and disadvantages of optical and video see-through AR, you can refer to [Ron Azuma's course notes on Augmented Reality][1].
 
-##Registration
+## Registration
 For the most accurate registration, that is, alignment between your eyes, the augmentations, and the world, it is necessary to know the position of the user's eyes relative to the display optics, and the camera which tracks the world. With ARToolKit, this is achieved by a simple self-calibration method in which the user holds a calibration pattern in front of the eye and lines up the pattern with a virtual cross hair shown in the see-through display. In an ideal world, the eye position calibration should be done each time a user starts the AR application, especially if it is a different user.
 
-##Calibration
+## Calibration
 Before calibrating the displays themselves, you must first [calibrate your camera][2]. This is extra important when using a stereo display as any registration error (any offset in position between the real world object and its viewed position in the display) will be much more obvious when viewing stereoscopically, and will normally be perceived as the depth of the augmentation being incorrect.
 
-###calib_optical
+### calib_optical
 The calib_optical utility is used to calibrate the displays to the camera position. Calibration is done monocularly (one eye, one perspective at a time), and as such should be conducted for each eye in turn (run first for one eye with the other closed, and then vice-versa). You will use spacebar when required for most configuration actions. It is used as follows:
 
 1.  With the HMD placed firmly on your head, run the calib\_optical application.
@@ -29,7 +29,8 @@ If at any point you need to see the video-image (temporarily, e.g. to see if the
 
 After taking ten measurements, the white cross hairs will disappear and the calibrated eye position will be printed out, looking something like this:
 ```
-    ./calib_opticalCamera image size (x,y) = (640,480)
+    ./calib_optical
+    Camera image size (x,y) = (640,480)
     Reading camera parameters from Data/camera_para.dat (distortion function version 3).
     *** Camera Parameter ***
     --------------------------------------
@@ -92,15 +93,15 @@ You will note that a measurement of the calibration error is generated. The lowe
 
 At this point you will be prompted for the name of the file in which to save the calibration results. If you are calibrating a stereo display, switch eyes and repeat steps 3 through 8 to capture ten measurements for the other eye. Although the calibration process may appear quite time consuming, with practice it can be completed in just a couple of minutes and should produce good optical viewing results.
 
-###Testing Calibration
+### Testing Calibration
 The [applications for monocular and stereo optical displays][example_optical] are examples for desktop demonstrating optical see-through with a calibrated camera and display. These applications are a good way to test your optical configuration(s), completed above.
 
-##Using the Calibration Files
+## Using the Calibration Files
 
-###Desktop
+### Desktop
 You will want to move the newly-generated calibration files into the `Data/` directory of your application.
 
-###Unity
+### Unity
 The ARToolKit Unity plugin supports both monocular and stereo see-through rendering out-of-the-box. For stereo, only half-width side-by-side stereo mode is supported currently, as used in e.g. the Epson Moverio BT-200 display.
 
 To use the optical calibration results in ARToolKit for Unity, the parameters file must be renamed and moved into the correct location inside your Unity project. The correct location is inside a folder at path `Assets/Resources/ardata/optical` inside your Unity project. Unlike on other platforms or renderers, the file name must end with the suffix ".bytes" for Unity to recognize it. E.g. If your parameters file is named "optical_param.dat", rename it to "optical\_param.bytes" and drop it into this folder. The first part of the filename can be named to help you identify the parameters.
@@ -113,19 +114,19 @@ Once the parameters file is in this location, optical mode should be enabled in 
 
 By default, when using optical mode, the video background is initially turned off. If you want to see the video image, press *Enter* (desktop platforms) or *Menu* (Android) and use the on-screen control to toggle the video background on or off. This, of course, can be changed by modifying the scripts.
 
-####Converting to Stereo
+#### Converting to Stereo
 Stereo optical see-through is set up in Unity by taking an existing Camera object with an ARCamera script attached, and duplicating it (in the Unity Editor, select the Camera game object, then choose "Edit-\>Duplicate" from the menu bar). You can rename the cameras to make clear which camera corresponds to which eye, as in this example:
 
 ![ARToolKit for Unity stereo optical camera][ARToolKit_for_Unity_stereo_optical_cameraL]
 
 On each camera, tick the boxes “Part of a stereo pair” and “Optical see-through mode”. On the desired “left” camera, choose “Stereo eye: left” and select the calibrated optical parameters file for the left eye from the "Optical parameters file" popup. Repeat step 4 for the right eye.
 
-####Alternative Stereo Configuration
+#### Alternative Stereo Configuration
 The Unity plugin also supports an alternative configuration for stereo optical- Optical calibration is instead performed only for one eye, and then this value is used for both eyes with a manual "offset" value applied to the second eye. This arrangement is better when the distance between the eyes can be accurately estimated. You might wish to use the [adult-population average][interpupillary_distance] eye separation of 0.065 metres (65 millimetres, or 2.56 inches).
 
 To set up in this way, set up as above, but choose the same "Optical parameters file" popup for both left and right eyes. Then, if the optical calibration is for the right eye, enter a negative value in the box labelled "Lateral offset right" for the left eye camera, e.g. -0.065. If the optical calibration file is for the left eye, enter a positive value in the box for the right eye camera, e.g. 0.065.
 
-##Limitations
+## Limitations
 While optical see-through AR is an attractive ideal, in practice it is very difficult to achieve accurate registration with optical see-through AR systems. (Registration is the alignment of the virtual objects shown in the display and their real-world referent). Most of these limitations come from the properties of the display itself, not the calibration procedures.
 
 Optical see-through calibration depends on accurately knowing the precise relationship of two optical apertures: the iris of the camera imaging the scene, and the iris of the eye of the user viewing the scene. We can estimate the relationship between the two by measuring the distance between the display being used to produce the imagery and the lens of the camera, but the position of the iris of the eye of the user and the display is not fixed. We can attempt to control this relationship by fixing the display very tightly in place on the user's head, but its position will differ by small amounts between sessions and between users. Even when accurate calibration has been achieved, a tiny shift in the position of the display relative to the user's eye can produce a significant offset in registration of objects in the scene. Unless using a headset which includes eye-tracking, accuracy of registration is limited.
