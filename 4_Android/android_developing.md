@@ -1,7 +1,7 @@
-#Developing with ARToolKitWrapper and ARBaseLib
+# Developing with ARToolKitWrapper and ARBaseLib
 Using the included ARToolKitWrapper native library and ARBaseLib Android library, it is simple to get an ARToolKit application up and running. Developers should refer to the ARSimple example included in the SDK as it is the most basic example and follows the development strategy described in this section.
 
-##ARWrapper
+## ARWrapper
 ARWrapper is a native C++ shared library that exposes a small set of functions for managing the lifecycle of an ARToolKit application, including initialization, adding markers, getting the projection matrix, querying transformations, and cleaning up at the end. Using JNI, these functions are mapped to a class within the ARBaseLib Android library so that they can be called from Java. The diagram below illustrates this.
 
 ![artoolkitwrapper_arbaselib][artoolkitwrapper_arbaselib]
@@ -17,7 +17,7 @@ Plase ensure that you run the build.sh and build_native.sh prior to copying the 
 
 Note: There are subdirectories for each CPU architecture, including armeabi, armeabi-v7a, mips and x86. It is the same library built for different instruction sets. The appropriate version is automatically chosen at runtime.
 
-##ARBaseLib
+## ARBaseLib
 ARBaseLib provides additional classes to simplify development. ARBaseLib is an Android library, meaning that it isn't an Android application itself, but can make use of the Android framework. Android applications can reference the library, and AndroidStudio will take care of including the necessary files when the APK is built and deployed. This allows reusable components to be placed in the library and used in many different examples and applications. To use ARBaseLib, import the ARBaseLib as new module to your AndroidStudio project:
 
 1. **File/Project Structure...**
@@ -29,7 +29,7 @@ ARBaseLib provides additional classes to simplify development. ARBaseLib is an A
 
 API documentation for the classes in ARBaseLib can be found in the `AndroidStudioProjects/ARBaseLibProj/doc` directory.
 
-##Development
+## Development
 Referencing ARBaseLib gives the application access to several new classes. Some of the key ones are:
 
 -   ARToolKit: A singleton class that handles the native calls.
@@ -179,9 +179,9 @@ Clearly much more complicated rendering can be achieved through more advanced Op
 
 The ARSimpleNative example (and its accompanying native library ARWrapperNativeExample) demonstrates how to call into native code to perform essentially the same OpenGL rendering that ARSimple does in Java.
 
-##Additional Notes
+## Additional Notes
 
-###Data Files
+### Data Files
 Data files used by ARToolKit include [camera parameters][android_camera_calibration], files with lists of markers, marker [pattern files][marker_training], [NFT datasets][marker_nft_training], and 3D model files. You get these files into your app's filesystem by placing them in folders inside your project’s "assets" folder. When your app runs, you make a call to ARBaseLib's AssetHelper class to unpack them (preferably just once, from an Application subclass). AssetHelper moves the assets from your application's .apk file into the application's cache on the internal storage. On subsequent launches, the assets are used from cache, saving time. Also, if space on the device is short, Android can clear this cache automatically, or the user manually. Finally, if the app is uninstalled, this space is reclaimed.
 
 *One rule needs to be observed: if the application's assets are changed, the "VersionCode" field (an integer) in the application's AndroidManifest.xml MUST be changed (usually incremented).*
@@ -200,7 +200,7 @@ The [ARToolKit for Android examples][1] provide working example code. The follow
     }
 ```
 
-###Loading Markers
+### Loading Markers
 The method to add a marker takes a marker configuration string, which is simply a semicolon-separated list of fields that describe the marker to load. The syntax is:
 
 -   For single markers: `single;path_to_pattern_file;pattern_width`
@@ -214,7 +214,7 @@ Example: `multi;/sdcard/AR/Data/multi/marker.dat`
     int markerID = ARToolKit.getInstance().addMarker("single;/sdcard/AR/Data/patt.hiro;80");
 ```
 
-###Application Permissions
+### Application Permissions
 In order to access the camera the application requires permissions which are set in the AndroidManifest.xml file. Ensure these are set correctly.
 ```
     <uses-permission android:name="android.permission.CAMERA" />
@@ -222,7 +222,7 @@ In order to access the camera the application requires permissions which are set
     <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 
-###Application Configuration
+### Application Configuration
 There is an issue where ARActivity initializes more than once when the orientation changes to landscape. To fix this, set the configChanges field for the application in the AndroidManifest.xml file as shown:
 ```
 <application
@@ -231,7 +231,7 @@ android:label="@string/app_name"
 android:configChanges="keyboardHidden|orientation" >
 ```
 
-##Developing directly with ARToolKit
+## Developing directly with ARToolKit
 For developers who want more control and direct access to ARToolKit functions, the core ARToolKit modules are available as static libraries:
 
 -   libar: core AR functions
@@ -249,7 +249,7 @@ Note that the entire ARToolKit API is not exposed to Java. Instead, implement AR
 
 ![artoolkit_direct][artoolkit_direct]
 
-###ARNative Example
+### ARNative Example
 
 The ARNative example (and its accompanying native library libARNative) demonstrate how to create a shared library, expose functions via JNI, and call them from an Android activity. It does not use either ARToolKitWrapper or ARBaseLib, so is the closest example to a “standard” ARToolKit application in the SDK.
 

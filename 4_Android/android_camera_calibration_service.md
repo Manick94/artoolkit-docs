@@ -1,7 +1,7 @@
-#Camera Calibration Service
+# Camera Calibration Service
 Every device uses a different camera, and each of these cameras have variables which affect the ability of ARToolKit (and all computer vision) to work properly. The camera calibration service is a cloud-and-crowd-based solution to generating and retrieving these camera-specific variables.
 
-##What Information is Collected?
+## What Information is Collected?
 This service does not store or transmit any personally identifying information.
 
 If a network connection is available, the following information may be transmitted to an ARToolworks server for the purpose of retrieving camera calibration information for your specific Android device:
@@ -11,10 +11,10 @@ If a network connection is available, the following information may be transmitt
 
 No personally identifying data is transmitted or stored during any part of the process. Additionally, the data is transferred via a secure HTTPS connection.
 
-##Requirements
+## Requirements
 The camera calibration service has a few requirements to use. Namely, internet.
 
-###Library Linkage
+### Library Linkage
 #### ARToolKit for Android v5.3.1 and later.
 All apps running the camera calibration service depend on native library libcurl. As of ARToolKit v5.3.1, libcurl and its dependencies libssl and libcrypto are supplied as a statically linked library. Applications that link to ARBaseLib or libARWrapper will automatically load these dependencies.
 
@@ -26,7 +26,7 @@ All apps running the camera calibration service depend on native library libcurl
     System.loadLibrary("curl");
 ```
 
-###Manifest
+### Manifest
 ```
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -37,7 +37,7 @@ All apps running the camera calibration service depend on native library libcurl
     <uses-feature android:glEsVersion="0x00010100" />
 ```
 
-##How do I Contribute to the Service?
+## How do I Contribute to the Service?
 Currently, the service is used exclusively on the Android platform through the [Camera Calibration App for Android][calib_app].
 
 [calib_app]: ./android_camera_calibration.md

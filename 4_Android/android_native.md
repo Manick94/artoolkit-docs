@@ -1,14 +1,14 @@
-#Android Native Development
+# Android Native Development
 The ARToolKit SDK package and the git cloned GitHub local repository of "artoolkit5" includes prebuilt native libraries. It's advised that a local repository be used since the downloaded SDK package is rarely up-to-date with the repository. If you are not planning on altering any native code then you do not need to consult this section or install the Android NDK. On the other hand, if you want to implement part of your AR application in native code, then you will need to build ARToolKit native C/C++ dependencies.
 
-##Prerequisites
+## Prerequisites
 Building native ARToolKit libraries requires a development environment capable of building native libraries for Android using the Android NDK (NDK 11+). Currently, ARToolKit actively supports the Android development systems of Mac OS X 9+ and Windows Desktop 8.1 and 10. However, there are those in the ARToolKit community who have successfully developed using Linux.
 
 >Note: This is by no means a comprehensive guide on how to setup an NDK development environment. If you need assistance in this area, please search online as there are many tutorials and articles covering this topic and it is outside the scope of this user guide.
 
 The following SDKs and tools should be installed and configured correctly on one of the chosen supported development systems.
 
-#####These are required tools for standard Android SDK development:
+##### These are required tools for standard Android SDK development:
 
 - [Standard Edition Java Development Kit][1] 1.7 or greater
 - [Android Studio IDE][3] - version 1.5.x or greater
@@ -18,12 +18,12 @@ The following SDKs and tools should be installed and configured correctly on one
 
 - Android NDK: Download and installation details described below
 
-#####Requirements for building native code with the NDK within or outside of the Android Studio IDE:
+##### Requirements for building native code with the NDK within or outside of the Android Studio IDE:
 
 - [Android NDK Preview][6] - The NDK that works with the Android Studio IDE.  Use the Android Studio IDE to download and setup the NDK preview requirements.
 - [Git distributed version control system and Git bash][7] - Git DVCS is a requirement for Windows Desktop and Mac OS X. Git bash is a requirement for Windows Desktop and is not applicable to Mac OS X.
 
-######Deprecated development tools and methods:
+###### Deprecated development tools and methods:
 
 - Eclipse IDE
 - ADT Plugin for Eclipse
@@ -32,11 +32,11 @@ The following SDKs and tools should be installed and configured correctly on one
 
 ---
 
-####Regarding the Windows Desktop development environment
+#### Regarding the Windows Desktop development environment
 
 A few Unix commands are required for the Android NDK build script, `ndk-build.cmd`, to work. These commands are provided by the Git bash shell that comes with the Git download. Because of that, we can thankfully replace Cygwin, the Unix-like environment for Windows, with Git bash. Cygwin is seemingly impractical for the meager requirements of `ndk-build.cmd` in that the Cygwin installation is large, invasive and the installation setup is confusing.
 
-#####Special Git installation instructions for Windows Desktop only
+##### Special Git installation instructions for Windows Desktop only
 
 When installing Git, from the Git setup wizard:
 
@@ -58,7 +58,7 @@ Keep in mind that the tutorial is written for Android Studio executed on Linux o
 
 For help with the Eclipse to Android Studio IDE transition, see the document [[https://github.com/artoolkit/artoolkit5/blob/master/AndroidStudioProjects/Docs/AS_Migration.pdf]].
 
-##Building Native Android Libraries
+## Building Native Android Libraries
 To build using the Android NDK toolchain, placed in the downloaded NDK is a script file, for Mac OS X, named `ndk-build` or, for Windows Desktop, named `ndk-build.cmd.` When Android Studio is used to download and install the NDK, by default, the NDK is installed directly under the Android SDK root folder. Also, by default, the NDK root folder is named "ndk-bundle."
 
 > Note: Due to the knife-edge roll of NDK version 11 by developers.android.com, it's recommended that ARToolKit Android developers download, install and use NDK version 11 or greater. Not doing so can result in link incompatibilities between your native libraries and their dependency on ARToolKit prebuilt native libraries.
@@ -102,7 +102,7 @@ To use the native ARToolKit binaries in your own Android application, you will n
 
 ---
 
-####Note
+#### Note
 
 The provided ARToolKit Android Studio projects do not yet fully drive the native C/C++ build process from within the Android Studio IDE. This is partly because NDK development support is not seamlessly integrated into Android Studio as of yet. Rest assured it's the ARToolKit team's goal to achieve full native build integration with Android Studio going forward.
 

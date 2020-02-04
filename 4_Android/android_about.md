@@ -1,4 +1,4 @@
-#ARToolKit for Android
+# ARToolKit for Android
 ARToolKit is a computer vision library that provides the tracking functionality required to build augmented reality applications. It has been ported to various hardware and software platforms, with recent focus specifically on the mobile domain.
 
 This section of the ARToolKit support library describes the port of ARToolKit to the [Android][android] mobile platform. Android is an open-source software stack for mobile devices that provides the operating system, as well as middleware, key applications and APIs. In addition to the appeal of the open environment, Android has also seen an increasing consumer market share, making it an attractive platform for commercial apps and advertising.
@@ -7,7 +7,7 @@ For application development, Android offers a rich [SDK][sdk] and development to
 
 The first section, *ARToolKit's SDK Structure* link below, covers the structure of ARToolKit and how to use it to develop your own augmented reality applications on Android. The SDK offers several different development paths, depending on the developer’s preference for Java or native coding. A certain amount of prior knowledge of Android development is essential, and assumed.
 
-##Index
+## Index
 
 - [ARToolKit's SDK Structure][android_sdk]
 - [Example Applications][android_examples]
