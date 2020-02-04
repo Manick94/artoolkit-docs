@@ -1,12 +1,12 @@
-#ARToolKit for Unity on Android
+# ARToolKit for Unity on Android
 To get started with using ARToolKit for Unity on Android, first visit our [Getting Started][unity_getting_started] guide.
 
-##Requirements
+## Requirements
 
 -   You must have a Unity Pro with Android Pro license to be able to export projects from Unity that use the ARToolKit for Unity plugins.
 -   Limited to devices "Android 2.3.1 'Gingerbread' (API Level 9)" or higher, or if using only square tracking "Android 2.2 'Froyo' (API Level 8)" or higher.
 
-##Player Settings
+## Player Settings
 When exporting to Android, some [Player Settings][android_player_settings] must be configured as follows to work correctly with ARToolKit for Unity (settings not mentioned can be adjusted to suit the user):
 ![Screenshot of Player Settings][player_settings]
 
@@ -30,7 +30,7 @@ First set the bundle ID in Unity (replacing com.mycompany.myapp with your chosen
 Secondly, the bundle ID must be manually changed in the Android manifest that ARToolKit provides. To do this, look inside your Unity project folder, for the file "Assets/Plugins/Android/AndroidManifest.xml". Open the file in a text editor and locate the text `package="com.mycompany.myapp"`, editing the "com.mycompany.myapp" to match the bundle identifier set in Unity.
 ![Screenshot of AndroidManifest.xml and Bundle ID Field][android_manifest_id]
 
-##Using ARToolKit for Unity in a Larger Android Project
+## Using ARToolKit for Unity in a Larger Android Project
 It is possible to modify the Android Java portion of ARToolKit for Unity to allow for incorporation into a larger Android application, or any other type of conceivable customization.
 
 Unity for Android comes bundled with the source code for its outermost Activity subclass (UnityPlayerActivity). ARToolKit for Unity subclasses this in a new class UnityARPlayerActivity. This class is packaged as a .jar file and provided in ARToolKit for Unity at path Assets/Plugins/Android/UnityARPlayer.jar. It is linked into the final product by Unity. Source for UnityARPlayerActivity is also supplied. You can find it in ARToolKit for Unity at path extras/Android UnityARPlayer source/.
@@ -60,7 +60,7 @@ See the following image for how to select the classes.
 
 Once the jar has been exported, place it in your Unity project at path `Assets/Plugins/Android/UnityARPlayer.jar`
 
-###Errata
+### Errata
 Why is NFT only API 9 and above? On Android OS releases v2.2.x and earlier, a defect in the handling of compressed resources inside .jar files embedded in .apks limits the size of compressed resources to as little as 1.0 megabyte (although this can be higher on some variants of the 2.2 OS series, depending on the device manufacturer). This imposes a limitation on the size of the NFT datasets which can be used if targeting Android 2.2 to 1.0 megabyte. This limitation was removed in Android OS 2.3.
 
 [unity_getting_started]: ../6_Unity/unity_getting_started.md

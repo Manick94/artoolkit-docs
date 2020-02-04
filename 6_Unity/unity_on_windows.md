@@ -1,11 +1,11 @@
-#ARToolKit for Unity on Windows
+# ARToolKit for Unity on Windows
 To get started with using ARToolKit for Unity on Windows, first visit our [Getting Started][unity_getting_started] guide.
 
-##Requirements
+## Requirements
 - You must have a Unity Pro or Personal license to be able to use the ARToolKit plugin.  
 - ARToolKit for Unity has a set of dependent DLLs which you must include along with any standalone app built for Windows. Please see [**Deployment**] [general_deploy_application] for more details.
 
-##Setup
+## Setup
 
 ### Choosing Between Multiple Webcams
 ARToolKit for Unity follows the standard ARToolKit video configuration commands using [DirectShow][config_video_capture].
@@ -15,7 +15,7 @@ If using the default video module (WinDS), you can have ARToolKit for Unity use 
 
 If you wish to use the alternate video module (WinDSVL), you must specify either the DirectShow "friendly name" for the device, or a device UUID, using XML. An example is: `-device=WinDSVL <?xml version="1.0" encoding="UTF-8"?><dsvl_input><camera show_format_dialog="false" friendly_name="Logitech Quickcam"><pixel_format><RGB32 flip_h="false" flip_v="true" /></pixel_format></camera></dsvl_input>`
 
-##Troubleshooting
+## Troubleshooting
 Many common issues can be diagnosed by looking at Unity's Editor.log or Player.log. On Windows, Player.log is located in the folder `EXECNAME_Data\output_log.txt` where EXECNAME_Data is a folder next to the executable with your game.
 
 ### DllNotFoundException
@@ -31,7 +31,7 @@ In spite of the ARWrapper.dll clearly being in the referred to folder, the Unity
 
 Also required are the Visual Studio 2010 runtimes, although these must be installed into the Windows system.
 
-##Deployment
+## Deployment
 See [Deploying an ARToolKit Application on Windows][general_deploy_application].
 
 

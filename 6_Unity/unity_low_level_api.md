@@ -1,6 +1,6 @@
-#ARToolKit for Unity Scripting and Low-Level API
+# ARToolKit for Unity Scripting and Low-Level API
 
-##Unity Scripting Environment at a High-Level
+## Unity Scripting Environment at a High-Level
 Unity provides a rich scripting interface for developing interactive applications. Scripts can be written in Javascript or C\#, and have access to the vast library of objects and functions. Basically any object that can be added manually in the Unity editor can also be scripted. Scripts also integrate seamlessly into the editor. For example, public fields in a script will automatically be presented in the UI using a suitable control so that their values can be easily configured.
 
 Unity’s C\# support is possible through the Mono framework, which provides a cross-platform implementation of Microsoft’s .NET framework. C\# is a modern object-oriented language, and due to its general popularity, there is abundant information and sets of tutorials on its use. The Mono implementation does not provide all the feature of .NET on Windows but the core language features are present.
@@ -15,7 +15,7 @@ This illustration shows the relationship between the various entities that make 
 
 To get a good overview of ARToolKit on the Unity platform, please see our [getting started guide][unity_getting_started].
 
-##Controlling Main ARToolKit Operation
+## Controlling Main ARToolKit Operation
 ARToolKit is added to your project by adding an instance of the ARController script to a GameObject in your scene. It does not matter where in the scene the GameObject is, and in most ARToolKit for Unity examples, a single object at the scene root holds the ARController.
 
 It is highly recommended that the ARController is added to the scene using the Unity Editor, as programmatic configuration of the ARController is complex. If you wish to ignore this recommendation, you are encouraged to examine the public properties of the ARController script and the way these are configured in the ARControllerEditor Unity Editor script.
@@ -33,7 +33,7 @@ By default, `StartAR()` is called during `Start()`. If you wish to override the 
 ```
 and then you can manually invoke `StartAR()`/`StopAR()` at more appropriate times for your application.
 
-###Adding, Removing, Finding and Querying Markers
+### Adding, Removing, Finding and Querying Markers
 The `ARMarker` script presents an abstraction of a marker for use in Unity.
 
 #### Adding a new marker
@@ -87,9 +87,9 @@ Here are some points to note when adding an ARMarker via a script:
     Quaternion orientation = ARUtilityFunctions.QuaternionFromMatrix(pose);
 ```
 
-##Connecting Markers to the Scene
+## Connecting Markers to the Scene
 
-###Using ARTrackedObject and ARCamera
+### Using ARTrackedObject and ARCamera
 A simple means of connecting a single ARMarker (which might represent either a single pictorial or barcode square marker, a multi- square marker set, or an NFT marker) to the Unity scene is to use the ARCamera script. This script must be on an GameObject that is a child of the AROrigin GameObject.
 
 The ARTrackedObject is associated with an ARMarker by setting ARTrackedObject Marker Tag to the same value as the desired ARMarker Tag. When the ARMarker appears and is tracked, the ARCamera Unity Camera draws its view at the same pose relative to its parent by means of the ARTrackedObject as the real camera to the real marker, and when the ARMarker disappears, the Camera's output is hidden.
@@ -123,7 +123,7 @@ To allow control over aspects of GameObjects other than their visibility, you ca
 
 The ARCamera's projection and viewport are set during AR startup. At present, it is not possible to add an ARCamera after `StartAR()` has been called, unless you modify ARController.
 
-##Using the Low-Level Plugin Interface
+## Using the Low-Level Plugin Interface
 Ultimately, all AR-related functions in ARToolKit for Unity's C\# scripts call the API defined by the native plugin, libARWrapper. You are free to make calls to this API too.
 
 Full API documentation for libARWrapper's simplified C-based API is available on our [website][c_docs].
