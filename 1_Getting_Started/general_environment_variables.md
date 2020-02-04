@@ -40,7 +40,7 @@ On the left hand side of the window, you will see the environment variable name,
 
 *Windows stores system-wide environment variables in the registry, as a string under the key `HKLM\\System\\CurrentControlSet\\Control\\Session Manager\\Environment`*
 
-###Mac OS X / Linux
+### Mac OS X / Linux
 1.   Environment variables can be set from a Terminal window.
 2.   From a terminal window, type the following lines, replacing "NAME" with the environment variable name and "VALUE" with its value:
 
