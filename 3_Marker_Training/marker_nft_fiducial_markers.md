@@ -1,11 +1,11 @@
-#Natural Feature Tracking with Fiducial Markers
+# Natural Feature Tracking with Fiducial Markers
 A fiducial marker is an *easily* detected feature in proximity to and as a point of reference to an object targeted for tracking. Fiducial markers can be knowingly and intentionally placed or naturally exist in a scene. Natural Feature Tracking (NFT) is the idea of recognizing and tracking a natural scene that is not (seemingly) augmented with markers. NFT can use embedded fiducial markers in a natural pictorial view to enhance tracking points and regions within the view. The result can be seemingly marker-less tracking (since the fiducial markers need not be obvious to the human viewer). Although ARToolKit offers full marker-less tracking, there are situations where using one or more [fiducial markers][marker_about] has advantages:
 
 -   Using the NFT 1.0 tracker plus fiducial markers is less computationally expensive than NFT 1.0 + 2.0 full marker-less tracking. Thus NFT 1.0 with fiducial markers is more practical for mobile devices.
 -   The NFT 2.0 tracker has a practical limit on the number of distinct markers that can be distinguished at any one time. Thus, if a large number of images need to be tracked (e.g. a 100-page book), fiducial markers enable efficient identification of numerous images intended to be tracked.
 -   Fiducial marker tracking adds significant robustness to tracking, particularly in poor lighting conditions, or when the camera is far away from the tracked image.
 
-##Fiducial Marker Appearance and Placement
+## Fiducial Marker Appearance and Placement
 To use only the standard 1.0 version of ARToolKit's NFT tracking with a fiducial marker, the tracked surface must have the marker either in the image or around the outside of it, there must be at least one in each image, the marker(s) must be square, and the markers must all have a black border and lie on a white background, or vice-versa. The marker(s) are not required to be of a particular size and the marker can embed colored patterns that blend with the image background.
 
 Once the image is in digital form, you should add the fiducial marker to it. The marker(s) can have black or white borders. If using black borders, the marker must sit on an area of white or very light-colored background (add an extra white border around the black border if necessary). If using white borders, the marker must sit on an area of black or very dark colored background. The inner half of the marker forms the unique portion, i.e. for a marker 80 mm wide, the inner 40 mm in both vertical and horizontal dimensions is the unique portion.

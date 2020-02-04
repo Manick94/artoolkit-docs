@@ -1,10 +1,10 @@
-#NFT Utilities for ARToolKit
+# NFT Utilities for ARToolKit
 This page is a description of the tools used along with [NFT tracking][marker_nft_training].
 
-##checkResolution
+## checkResolution
 The checkResolution tool supplied with ARToolKit can help in determining the required resolution of source image data used in creating an NFT dataset.
 
-###Operational summary
+### Operational summary
 
 1.  Obtain the NFT image to be tracked in printed form. ![Pinball NFT Sample][Pinball_NFT_sample_printed_with_hand]
 2.  Print a single standard ARToolKit "Hiro" marker and trim excess paper around the outside. The Hiro marker can be printed at any size; 40 mm is a good size (approximately 2 inches). ![Hire marker on paddle][Hiro_marker_on_paddle_40mm]
@@ -24,10 +24,10 @@ You will be prompted to enter the size of the Hiro marker. E.g. if printed at 40
 ### Using the Output
 Moving the camera around and observing the DPI values should give you an idea of the [maximum resolution][marker_nft_training] required when producing the digital version of the printed material to be tracked (it is not recommended to produce imagery at a higher resolution than the printed version, which is typically 150dpi). Additionally, the output helps determine the range of resolutions required when running the genImageSet tool as the first step in training a new NFT data set.
 
-###Tips for Best Use
+### Tips for Best Use
 Be sure to use a camera running at the same frame size as will be used in the online tracking process; the DPI values produced depend on the camera image size. In spite of megapixel webcams being the norm, it is actually better to use a lower resolution camera with a higher frame rate; 640x480 is perfectly adequate for most NFT tracking situations.
 
-###Keyboard / Mouse Controls
+### Keyboard / Mouse Controls
 Below is a table of keyboard / mouse controls for using checkResolution:
 
 | Key | Function                         |
@@ -36,7 +36,7 @@ Below is a table of keyboard / mouse controls for using checkResolution:
 | 1   | Decrease binarization threshold  |
 | 2   | Increase binarization threshold. |
 
-##dispFeatureSet
+## dispFeatureSet
 dispFeatureSet displays trained NFT datasets by overlaying representations of the data points on the source images.
 
 Usage:
@@ -52,7 +52,7 @@ After launching dispFeatureSet, the various image resolutions will be displayed 
 ![ARToolKit NFT - dispFeatureSet terminal][ARToolKit_NFT_-_dispFeatureSet_terminal]
 ![ARToolKit NFT - dispFeatureSet][ARToolKit_NFT_-_dispFeatureSet]
 
-##dispImageSet
+## dispImageSet
 dispImageSet displays compressed image pyramids.
 
 Usage:
@@ -65,7 +65,7 @@ After launching dispImageSet, the various image resolutions will be displayed on
 ![ARToolKit NFT - dispImageSet terminal][ARToolKit_NFT_-_dispImageSet_terminal]
 ![ARToolKit NFT - dispImageSet][ARToolKit_NFT_-_dispImageSet]
 
-##genTexData
+## genTexData
 genTexData performs training of NFT datasets from a supplied JPEG-format source image.
 
 Usage:

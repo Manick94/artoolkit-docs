@@ -1,4 +1,4 @@
-#Debugging Marker Recognition Problems
+# Debugging Marker Recognition Problems
 ARToolKit has a flexible recognition pipeline, which allows it to work relatively well even with uncalibrated webcams, in a variety of lighting conditions, and with [markers][marker_about] of poor quality. However, there are limits to this tolerance, and sometimes when tracking does not work optimally, you might be left wondering how to "debug" the tracking and address the most serious sources of problems.
 
 This article focusses on the issue of marker recognition, particularly marker recognition when using [barcode markers][marker_barcode], or larger numbers of markers in a [multi-marker set][marker_multi].
@@ -56,7 +56,7 @@ When a square-like region fails to pass some critical cut-off in the ARToolKit p
 
 Not all cutoff phases are applicable to all markers. For example, the phases whose descriptions refer to "barcode..." are not applicable to pattern-based markers. The phases with "pose error" in the description apply only if a multi-marker configuration file has been correctly defined and loaded.
 
-###Changing check_id's Default Settings
+### Changing check_id's Default Settings
 The size of the marker border, and the pattern type settings can be adjusted from the command line. Running the utility with the `--help` option will show the various command-line options for adjusting the default settings.
 On Linux / OS X, type:
 ```
