@@ -1,5 +1,5 @@
 # Join the community
-If you like ARToolKit and would like to make it even better join us on [GitHub](https://github.com/artoolkit/artoolkit5 "ARToolkit on GitHub").
+If you like ARToolKit and would like to make it even better join us on [GitHub](https://github.com/artoolkitx/artoolkit5 "ARToolkit on GitHub").
 
 You can contribute all sorts of things:
 * Enhancing the ARToolKit codebase (Java, Objective C, C, C++)

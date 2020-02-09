@@ -50,6 +50,6 @@ To reduce the glare, markers should be constructed of or over non-reflective sur
 
 To reduce shadows, we recommend using omnidirectional lighting (lighting conditions where light falls on the markers from all directions).
 
-[diagram]: ../_media/diagram.jpg
+[diagram]: ./../_media/diagram.jpg
 [marker_barcode]: ./marker_barcode.md
 [marker_training]: ./marker_training.md
