@@ -6,7 +6,7 @@ ARToolKit is software that lets programmers easily develop Augmented Reality app
 
 The source code for this project is hosted on [GitHub][artk_github] and the compiled SDKs for all platforms (Mac OS X, PC, Linux, Android, iOS), along with the ARToolKit plug-in for Unity3D, are available at our [Downloads][artk_sdk_download] page.
 
-Each of the individual platform downloads include a README file and example applications to help you get started immediately.  The documentation pages here include: detailed APIs, tutorials, and examples from novice to expert levels. Further support can be found by joining the [ARToolKit Community Forum][artk_forums].
+Each of the individual platform downloads include a README file and example applications to help you get started immediately.  The documentation pages here include: detailed APIs, tutorials, and examples from novice to expert levels. ~~Further support can be found by joining the [ARToolKit Community Forum][artk_forums].~~
 
 ## Features
 
@@ -99,8 +99,8 @@ ARToolKit supports both video and optical see-through augmented reality. Video s
 [example_optical]: 7_Examples/example_optical.md
 [example_simplelite]: 7_Examples/example_simplelite.md
 
-[artk_github]: https://github.com/artoolkit
-[artk_sdk_download]: http://artoolkit.org/download-artoolkit-sdk
+[artk_github]: https://github.com/artoolkitx
+[artk_sdk_download]: https://github.com/artoolkitx/artoolkit5/releases
 [artk_forums]: http://artoolkit.org/community/forums/
 [external_2x_docs]: http://www.hitl.washington.edu/artoolkit/documentation/
 [external_inside_artoolkit]: http://www.hitl.washington.edu/artoolkit/Papers/ART02-Tutorial.pdf
