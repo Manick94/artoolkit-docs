@@ -17,5 +17,5 @@ To do so there are a few things you need to be aware of:
 1. [Get involved setup][get_involved]
 2. [Coding rules to follow][coding_rules]
 
-[coding_rules]: ./3-Coding_guidelines.md
-[get_involved]: ./2-Get_involved.md
+[coding_rules]: ./3-coding_guidelines.md
+[get_involved]: ./2-get_involved.md
