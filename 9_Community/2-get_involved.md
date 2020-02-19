@@ -4,10 +4,10 @@ To get involved there are a few steps you need to do and a few procedures that t
 
 ## Check out the source code
 1. To contribute to the ARToolKit codebase, no matter if fixing or enhancing a sample app or the ARToolKit codebase itself, you need to have a [GitHub](https://github.com/join?source=header-home "Join GitHub") account.
-2. Always work with GitHub forked branches. Fork the public https://github.com/artoolkit/artoolkit5.git repository for the base toolkit, or https://github.com/artoolkit/arunity5.git for the Unity plugin.
+2. Always work with GitHub forked branches. Fork the public https://github.com/artoolkitx/artoolkit5.git repository for the base toolkit, or https://github.com/artoolkitx/arunity5.git for the Unity plugin.
   - For documentation on how to fork and on how to keep your fork up-to-date with the master see the this documentation https://help.github.com/articles/fork-a-repo/
 3. We recommend setting an `upstream` remote to the main repo from your fork. With this you'll see changes to the main ARToolKit5 repo when you do a `git status`. (It just makes things easier)
-  - As an example, to add the main ARToolKit5 repo as a remote, type `git remote add upstream https://github.com/artoolkit/artoolkit5.git` into your git terminal.
+  - As an example, to add the main ARToolKit5 repo as a remote, type `git remote add upstream https://github.com/artoolkitx/artoolkit5.git` into your git terminal.
   - Remember to re-sync against the remote master branch often. `git fetch upstream` and `git rebase upstream/master`
 4. Do your work in whatever branch you want to in your fork.
   - Work on branches that track the `upstream master` branch. `git checkout -b <<branch name>> upstream/master`
