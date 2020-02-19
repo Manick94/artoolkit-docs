@@ -1,5 +1,5 @@
 # Get involved
-We have publicly available repositories for everyone to contribute to. There is the main [ARToolKit5 repo](https://github.com/artoolkit/artoolkit5 "ARToolKit5 GitHub"), the [Unity integration] (https://github.com/artoolkit/arunity5 "ARToolKit5 for Unity") and the [JavaScript integration] (https://github.com/artoolkit/jsartoolkit5 "JSARToolKit5") to name the major ones. With more open source ventures coming soon.
+We have publicly available repositories for everyone to contribute to. There is the main [ARToolKit5 repo](https://github.com/artoolkit/artoolkit5 "ARToolKit5 GitHub"), the [Unity integration](https://github.com/artoolkit/arunity5 "ARToolKit5 for Unity") and the [JavaScript integration](https://github.com/artoolkit/jsartoolkit5 "JSARToolKit5") to name the major ones. With more open source ventures coming soon.
 To get involved there are a few steps you need to do and a few procedures that take place behind the scenes.
 
 ## Check out the source code
